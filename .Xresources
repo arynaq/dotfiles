@@ -1,0 +1,69 @@
+! ! Copy paste functionality
+URxvt.perl-ext-common: clipboard
+URxvt.keysym.Control-Shift-v: perl:clipboard:paste
+URxvt.keysym.Control-Shift-c: perl:clipboard:copy
+URxvt.iso14755: False
+URxvt.copyCommand:  xclip -i -selection clipboard
+URxvt.pasteCommand: xclip -o -selection clipboard
+
+!! Fonts for terminal, source code pro 
+URxvt*font: xft:Source\ Code\ Pro\ Medium:pixelsize=12:antialias=true:hinting=true,xft:Source\ Code\ Pro\ Medium:pixelsize=13:antialias=true:hinting=true
+
+!! Terminal effects
+URxvt*depth: 32
+URxvt*scrollBar: false
+*background: rgba:0000/0000/0000/eeee
+*foreground: #d9e6f2
+URxvt*borderLess: false
+URxvt*externalBorder: 0
+*buffered: true
+
+! --- standard colors ---
+!
+! ! black
+ *color0: #000000
+!
+! ! bright_black
+ *color8: #424242
+!
+! ! red
+ *color1: #713051
+!
+! ! bright_red
+ *color9: #e1b8cc
+!
+! ! green
+ *color2: #517130
+!
+! ! bright_green
+ *color10: #cce1b8
+!
+! ! yellow
+ *color3: #715130
+!
+! ! bright_yellow
+ *color11: #e1ccb8
+!
+! ! blue
+ *color4: #305171
+!
+! ! bright_blue
+ *color12: #b8cce1
+!
+! ! magenta
+ *color5: #513071
+!
+! ! bright_magenta
+ *color13: #ccb8e1
+!
+! ! cyan
+ *color6: #307151
+!
+! ! bright_cyan
+ *color14: #b8e1cc
+!
+! ! white
+ *color7: #ffffff
+!
+! ! bright_white
+ *color15: #ffffff

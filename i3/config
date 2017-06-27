@@ -61,6 +61,8 @@ bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
 
+
+
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
@@ -162,6 +164,8 @@ set $ws4 4:[code2]
 set $ws5 5:[media]
 
 
+bindsym $mod+Shift+u exec "urxvt -name -floating"
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
@@ -178,12 +182,22 @@ assign [class="QtCreator"] $ws4
 exec --no-startup-id i3-msg 'workspace $ws1; exec urxvt -name floating -cd $HOME/Desktop/'
 exec --no-startup-id "i3-msg 'workspace $ws2; exec chromium'"
 exec --no-startup-id i3-msg 'workspace $ws5; exec spotify'
+exec --no-startup-id i3-msg 'exec urxvt -name scratchpad -cd $HOME/Gists/'
 
 
-for_window [class="URxvt" instance="floating"] floating enable, move position 100px 100px, resize grow right 120px, resize grow down 130px
 for_window [class="Spotify"] floating enable; resize shrink width 10000px; resize grow width 1200px; resize shrink height 10000px; resize grow height 700px; move position 300px 100px;
 for_window [class="QtCreator"] floating enable; resize shrink width 10000px; resize grow width 1200 px; resize shrink height 10000px; resize grow height 700px; move position 300px 100px;
 for_window [title="MultiSignal"] floating enable;
-for_window [title="MultisignalRight"] floating enable;
+for_window [title="Tags & Scenarios"] floating enable;
 for_window [title="Icon bar"] floating enable;
 for_window [title="Icon Bar"] floating enable;
+#for_window [class="URxvt" instance="floating"] floating enable; resize shrink width 10000px; resize grow width 1200px; resize shrink height 10000px; resize grow height 700px; move position 300px 100px;
+for_window [class="URxvt" instance="floating"] floating enable, resize shrink width 10000px, resize shrink height 10000px, resize grow width 1200px, resize grow height 700px, move position 300px 100px
+for_window [instance="scratchpad"] move window to scratchpad, resize shrink width 10000px, resize shrink height 10000px, resize grow width 1200px, resize grow height 700px,  move position 300px 100px, scratchpad show
+for_window [class="Pacman"] floating enable;
+for_window [class="Gimp"] floating enable;
+for_window [class="gimp"] floating enable;
+
+
+bindsym $mod+plus scratchpad show
+

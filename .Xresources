@@ -1,69 +1,60 @@
-! ! Copy paste functionality
-URxvt.perl-ext-common: clipboard
-URxvt.keysym.Control-Shift-v: perl:clipboard:paste
-URxvt.keysym.Control-Shift-c: perl:clipboard:copy
-URxvt.iso14755: False
-URxvt.copyCommand:  xclip -i -selection clipboard
-URxvt.pasteCommand: xclip -o -selection clipboard
-
+!! Copy paste functionality
 !! Fonts for terminal, source code pro 
+URxvt.perl-ext-common: clipboard
+URxvt.keysym.Control-Insert: perl:clipboard:copy
+URxvt.keysym.Shift-Insert: perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt.clipboard.copycmd:  xclip -i -selection clipboard
+URxvt.clipboard.pastecmd: xclip -o -selection clipboard
+
 URxvt*font: xft:Source\ Code\ Pro\ Medium:pixelsize=12:antialias=true:hinting=true,xft:Source\ Code\ Pro\ Medium:pixelsize=13:antialias=true:hinting=true
 
 !! Terminal effects
 URxvt*depth: 32
 URxvt*scrollBar: false
-*background: rgba:0000/0000/0000/eeee
-*foreground: #d9e6f2
 URxvt*borderLess: false
 URxvt*externalBorder: 0
 *buffered: true
 
-! --- standard colors ---
-!
-! ! black
- *color0: #000000
-!
-! ! bright_black
- *color8: #424242
-!
-! ! red
- *color1: #713051
-!
-! ! bright_red
- *color9: #e1b8cc
-!
-! ! green
- *color2: #517130
-!
-! ! bright_green
- *color10: #cce1b8
-!
-! ! yellow
- *color3: #715130
-!
-! ! bright_yellow
- *color11: #e1ccb8
-!
-! ! blue
- *color4: #305171
-!
-! ! bright_blue
- *color12: #b8cce1
-!
-! ! magenta
- *color5: #513071
-!
-! ! bright_magenta
- *color13: #ccb8e1
-!
-! ! cyan
- *color6: #307151
-!
-! ! bright_cyan
- *color14: #b8e1cc
-!
-! ! white
- *color7: #ffffff
-!
-! ! bright_white
- *color15: #ffffff
+
+*background: #002b36
+*foreground: #c2cfd3
+!!*foreground: #657b83
+!!*fading: 40
+*fadeColor: #002b36
+*cursorColor: #93a1a1
+*pointerColorBackground: #586e75
+*pointerColorForeground: #93a1a1
+
+!! black dark/light
+*color0: #073642
+*color8: #002b36
+
+!! red dark/light
+*color1: #dc322f
+*color9: #cb4b16
+
+!! green dark/light
+*color2: #859900
+*color10: #586e75
+
+!! yellow dark/light
+*color3: #b58900
+*color11: #657b83
+
+!! blue dark/light
+*color4: #268bd2
+*color12: #839496
+
+!! magenta dark/light
+*color5: #d33682
+*color13: #6c71c4
+
+!! cyan dark/light
+*color6: #2aa198
+*color14: #93a1a1
+
+!! white dark/light
+*color7: #eee8d5
+*color15: #fdf6e3
+

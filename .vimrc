@@ -21,8 +21,10 @@ Plugin 'gmarik/Vundle.vim'
 "Plugin 'jnurmine/Zenburn'
 "Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'Lokaltog/powerline'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'Valloric/YouCompleteMe'
 "Plugin 'ternjs/tern_for_vim'
 
 
@@ -56,6 +58,7 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
+set t_Co=256
 " Allow backspacing over everything in insert mode.
 set backspace=indent,eol,start
 
@@ -197,5 +200,31 @@ let python_highlight_all=1
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
 set nu
-set t_Co=256
 set laststatus=2
+
+set clipboard=unnamedplus
+
+"let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
+
+set winminheight=0
+
+nnoremap th  :tabfirst<CR>
+nnoremap tj  :tabnext<CR>
+nnoremap tk  :tabprev<CR>
+nnoremap tl  :tablast<CR>
+nnoremap tt  :tabedit<CR>
+nnoremap tn  :tab sp<CR>
+nnoremap tm  :tabm<SPACE>
+nnoremap td  :tabclose<CR>
+
+map <C-J> : wincmd j <CR> :wincmd _ <CR>
+map <C-K> : wincmd k <CR> :wincmd _ <CR>
+map <C-H> : wincmd h <CR> :wincmd <bar> <CR>
+map <C-L> : wincmd l <CR> :wincmd <bar> <CR>
+
+
+
+set tags=./tags,tags;
+
